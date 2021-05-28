@@ -12,7 +12,7 @@
             window.location.href= 'market://details?id=<appID>';
         }
         if (navigator.userAgent.toLowerCase().indexOf("iphone") > -1) {
-            window.location.href= 'itms-apps://itunes.apple.com/app/<1126278978>';
+            window.location.href= 'https://apps.apple.com/kr/app/id1126278978';
         }
     });
 </script>
