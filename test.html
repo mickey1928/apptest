@@ -11,8 +11,12 @@
         if (navigator.userAgent.toLowerCase().indexOf("android") > -1) {
             window.location.href= 'market://details?id=<appID>';
         }
-        if (navigator.userAgent.toLowerCase().indexOf("iphone") > -1) {
+        if (navigator.userAgent.toLowerCase().indexOf("iphone") > -1)
+        <script>
+          alert('hi');
+        </script>{
             window.location.href= 'https://apps.apple.com/kr/app/id1126278978';
+
         }
     });
 </script>
