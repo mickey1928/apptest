@@ -9,7 +9,37 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script>$(document).ready(function () {
         
-      var userAgent = navigator.userAgent;
+     
+      	  var userAgent = navigator.userAgent;
+	  var visiteTm = ( new Date() ).getTime(); 
+	  if(userAgent.match(".*Android.*")){ 
+		  //안드로이드폰 
+		  // https://developer.chrome.com/multidevice/android/intents 
+		  // 앱이 있으면 앱 실행, 없으면 마켓 이동 
+		  location.href = 'intent://com.wooribank.smart.wwms#Intent;scheme=woorimembers;package=com.wooribank.smart.wwms;end'; 
+		  //location.href = 'myappandroi://main_web'; // 안드로이드 앱 실행 
+		  }else if(userAgent.match(".*iPhone.*") || userAgent.match(".*iPad.*")){ 
+		  //아이폰 
+		  setTimeout( function () {
+			  if ( ( new Date() ).getTime() - visiteTm < 3000 ) { // 앱스토어 이동 
+				  location.href = "https://apps.apple.com/kr/app/id1126278978"; 
+			  } 
+		  } ,2500 ); 
+		  setTimeout( function () { // 앱실행 
+			  location.href = "woorimembers://"; 
+		  } ,0 ); 
+		  }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      /* var userAgent = navigator.userAgent;
 
       var visitedAt = (new Date()).getTime(); // 방문 시간
 
@@ -49,7 +79,7 @@
 
      }
 
-}
+} */
       
   
       
