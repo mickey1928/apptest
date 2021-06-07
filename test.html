@@ -13,7 +13,7 @@
 
       var visitedAt = (new Date()).getTime(); // 방문 시간
 
-      if (userAgent.match(".*iPhone.*") || userAgent.match(".*iPad.*"))  {
+      if (userAgent.match(/iPhone|iPad/))  {
 
           setTimeout(
                   function() {
