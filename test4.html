@@ -10,36 +10,24 @@
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<title>우리WON멤버스 앱 리다이렉션 페이지</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script>
-		function goDown {
-			var userAgent = navigator.userAgent; // OS 기종
-			
-			var visitedAt = (new Date()).getTime(); //방문시간
-			
-			if(userAgent.match(/iphone|ipad/)) {// 아이폰, 아이패드
-				setTimeout(function() {// 앱이 설치되어 있으면 앱 실행, 미설치 시 마켓으로 이동
-						if((new Date()).getTime()-visitedAt<10000) {
-							location.href="https://apps.apple.com/kr/app/id1126278978";
-						}
-				}, 50000);
-				setTimeout(function() {
-					location.href="woorimembers://";
-				}, 0);
-			} else {
-				// 앱이 설치되어 있으면 앱 실행, 미설치 시 마켓으로 이동
-				location.href = 'intent://com.wooribank.smart.wwms#Intent;scheme=woorimembers;package=com.wooribank.smart.wwms;end;';// 안드로이드 앱 실행			
-			}
-		}
-	</script>
-</head>
-<body onload="goDown();">
 	<script>$(document).ready(function() {
-		
+		var userAgent = navigator.userAgent;
+var visitTime = (new Date()).getTime();
+if (userAgent.match(/Android/i)) { //안드로이드일 때
+    location.href = 'intent://com.wooribank.smart.wwms#Intent;scheme=woorimembers;package=com.wooribank.smart.wwms;end;';
+} else if (userAgent.match(/iPhone/i)) { //아이폰일 때
+    setTimeout(function() {
+        if ((new Date()).getTime() - visitTime < 3000) {
+            location.href = "https://apps.apple.com/kr/app/id1126278978";
+        }
+    } ,2500);
+    setTimeout(function() {
+        location.href = "woorimembers://";
+    } ,0);
+}
 		
 			
-			if(userAgent.match(".*android.*")) { // 안드로이드
-				
-			}
+		
 	});
 	
 	</script>
