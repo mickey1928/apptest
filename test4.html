@@ -17,10 +17,10 @@ if (userAgent.match(/Android/i)) { //안드로이드일 때
     location.href = 'intent://com.wooribank.smart.wwms#Intent;scheme=woorimembers;package=com.wooribank.smart.wwms;end;';
 } else if (userAgent.match(/iPhone/i)) { //아이폰일 때
     setTimeout(function() {
-        if ((new Date()).getTime() - visitTime < 3000) {
+        if ((new Date()).getTime() - visitTime < 2000) {
             location.href = "https://apps.apple.com/kr/app/id1126278978";
         }
-    } ,2900);
+    } ,500);
     setTimeout(function() {
         location.href = "woorimembers://";
     } ,0);
