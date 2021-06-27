@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <title>appTest</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>$(document).ready(function () {
+
+      var userAgent = navigator.userAgent;
+
+      var visitedAt = (new Date()).getTime(); // 방문 시간
+
+      if (userAgent.match(/iPhone|iPad/))  {
+
+          setTimeout(
+                  function() {
+                        if ((new Date()).getTime()-visitedAt<10000) {
+                              location.href="https://apps.apple.com/kr/app/id1126278978";
+          }
+       }, 50000);
+      setTimeout(function() { 
+      location.href="woorimembers://";
+    }, 0);
+      
+} else
+      
+	if(userAgent.match(".*Android.*")){ //안드로이드폰
+		// 앱이 있으면 앱 실행, 없으면 마켓 이동 
+		location.href = 'intent://com.wooribank.smart.wwms#Intent;scheme=woorimembers;package=com.wooribank.smart.wwms;end;'; // 안드로이드 앱 실행
+
+		
+} 
+
+    });
+</script>
+</body>
+</html>
